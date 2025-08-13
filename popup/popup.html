@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Чистый визит</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 12px; min-width: 320px; }
+    h1 { font-size: 16px; margin: 0 0 8px 0; }
+    .domain { font-weight: 600; margin-bottom: 8px; }
+    label { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+    button { padding: 8px 12px; border: 0; background: #0b66ff; color: #fff; border-radius: 6px; cursor: pointer; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .muted { color: #666; font-size: 12px; }
+    .result { margin-top: 10px; font-size: 12px; white-space: pre-line; }
+  </style>
+</head>
+<body>
+  <h1>Чистый визит — Reset This Site</h1>
+  <div class="domain" id="domain">Определение домена…</div>
+
+  <label>
+    <input type="checkbox" id="includeThirdParty" />
+    Очистить сторонние домены из этой вкладки
+  </label>
+
+  <label>
+    <input type="checkbox" id="removeHistory" />
+    Удалить историю посещений для этого домена
+  </label>
+
+  <label>
+    <input type="checkbox" id="reloadAfter" checked />
+    Перезагрузить вкладку после очистки
+  </label>
+
+  <label class="muted">
+    <input type="checkbox" id="clearHttpCache" />
+    Также очистить HTTP-кэш (глобально)
+  </label>
+
+  <div style="margin:10px 0;">
+    <button id="run">Очистить сейчас</button>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

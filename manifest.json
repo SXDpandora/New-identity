@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Чистый визит — Reset This Site",
+  "version": "1.0.0",
+  "description": "Удаляет все данные текущего сайта: cookies, хранилища, service workers, кэш, настройки сайта. Опция очистки сторонних доменов.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "cookies",
+    "browsingData",
+    "history",
+    "webNavigation",
+    "scripting"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Очистить этот сайт",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
